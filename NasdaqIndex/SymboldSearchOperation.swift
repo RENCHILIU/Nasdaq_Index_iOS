@@ -13,8 +13,10 @@
 import Foundation
 
 class SymboldSearchOperation: Operation {
-  var query: String
-  var limit: Int
+  private var query: String
+  private var limit: Int
+  
+  var companyList = [Company]()
   
   init(query: String, limit: Int) {
     self.query = query
@@ -22,13 +24,18 @@ class SymboldSearchOperation: Operation {
   }
   
   override func execute() {
-    WebServiceManager.invokeService(with: WebServiceRequest<[Company]>(.searchNasdaq(query: query, limit: limit)), completionHandler: { result in
+    WebServiceManager.invokeService(with: WebServiceRequest<[Company]>(.searchNasdaq(query: query, limit: limit)), completionHandler: { [weak self] result in
       switch result {
       case .failure(let error):
         print(error)
+//        finish(error)
       case .success(let data):
+        self?.companyList = data
         print(data)
+        self?.finish() // we need to call finish, otherwise it never ends
       }
     })
+    
+    
   }
 }
