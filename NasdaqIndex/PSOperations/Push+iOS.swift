@@ -8,7 +8,7 @@ public struct Push: CapabilityType {
         authorizer.completeAuthorization(token, error: nil)
     }
 
-    public static func didFailRegistration(_ error: Error) {
+    public static func didFailRegistration(_ error: CFError) {
         authorizer.completeAuthorization(nil, error: error)
     }
 
@@ -55,7 +55,7 @@ private class PushAuthorizer {
         application.registerForRemoteNotifications()
     }
 
-    func completeAuthorization(_ token: Data?, error: Error?) {
+    func completeAuthorization(_ token: Data?, error: CFError?) {
         self.token = token
 
         guard let completion = self.completion else { return }

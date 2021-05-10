@@ -19,21 +19,27 @@ enum HttpMethod: String {
 }
 
 enum WebServiceRequestType {
-  case searchNasdaq
+  case searchNasdaq(query: String, limit: Int)
 
 }
 
-
-struct WebServiceRequest {
+struct WebServiceRequest<T> {
   
   private var request: URLRequest?
   
   init(_ requestType: WebServiceRequestType) {
     switch requestType {
-    case WebServiceRequestType.searchNasdaq:
-      request = buildRequest(url: "\(localhost)/search?query=APP&limit=1", method: .GET)
+    case WebServiceRequestType.searchNasdaq(let query, let limit):
+      request = buildRequest(url: "\(localhost)/search?query=\(query)&limit=\(limit)", method: .GET) //TODO:make it handle list
     }
   }
+  
+  //TODO: factory method for request
+//  func addQuery(dict: [Any: Any]) {
+//
+//  }
+  
+  
   
   private func buildRequest(url: String, method: HttpMethod) -> URLRequest {
     var request = URLRequest(url: URL(string: url)!)

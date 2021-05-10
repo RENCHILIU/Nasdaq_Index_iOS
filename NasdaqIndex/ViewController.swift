@@ -11,15 +11,12 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    WebServiceManager.invokeService(with: WebServiceRequest(.searchNasdaq)) { (result) in
-      switch result {
-      case .failure(let error):
-        print(error)
-      case .success(let data):
-        print(data)
-      }
-    }
+    
+    let op = SymboldSearchOperation(query: "A", limit: 5)
+    let queue = OperationQueue()
+    //TODO: how to maintain a singleton queue
+    queue.addOperation(op)
   }
 
-
+ 
 }

@@ -12,22 +12,28 @@
 
 import Foundation
 
-enum Result<Data, Error> {
-  case success(Data)
-  case failure(Error)
+enum Result<T, U> {
+  case success(T)
+  case failure(U)
 }
 
-typealias CompletionHandler = (Result<Data, Error>) -> Void
+//typealias CompletionHandler = (Result<CBData, Error>) -> Void
+
 class WebServiceManager {
   
-  static func invokeService(with request: WebServiceRequest, completionHandler: CompletionHandler?) {
+  static func invokeService<T: Decodable>(with request: WebServiceRequest<T>, completionHandler: ((Result<T, Error>) -> Void)?) {
     
-    let networkOperation = URLSessionTaskOperation(task: URLSession.shared.dataTask(with: request.build(), completionHandler: { (data, response, error) in
+    let networkOperation = URLSessionTaskOperation(task: URLSession.shared.dataTask(with: request.build(), completionHandler: { (data, response, error)  in
       if let error = error {
         completionHandler?(Result.failure(error))
       } else if let data = data {
-        completionHandler?(Result.success(data))
-      } else {
+        if let object = try? JSONDecoder().decode(T.self, from: data) {
+          completionHandler?(Result.success(object))
+        } else {
+          //TODO: handle error
+          print("decode error")
+        }
+      }else {
         //TODO: handle error
       }
     }))

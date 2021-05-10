@@ -38,6 +38,8 @@
 		3811CEB926474CDF0087C353 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811CE9B26474CDF0087C353 /* Operation.swift */; };
 		3811CEBA26474CDF0087C353 /* TimeoutObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811CE9C26474CDF0087C353 /* TimeoutObserver.swift */; };
 		3811CEBF2647501B0087C353 /* WebServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811CEBE2647501B0087C353 /* WebServiceRequest.swift */; };
+		3811CECD26479FA70087C353 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811CECC26479FA70087C353 /* Company.swift */; };
+		3811CED22648996C0087C353 /* SymboldSearchOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811CED12648996C0087C353 /* SymboldSearchOperation.swift */; };
 		388E4DDF264730BC00C8D1E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388E4DDE264730BC00C8D1E0 /* AppDelegate.swift */; };
 		388E4DE1264730BC00C8D1E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388E4DE0264730BC00C8D1E0 /* SceneDelegate.swift */; };
 		388E4DE3264730BC00C8D1E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388E4DE2264730BC00C8D1E0 /* ViewController.swift */; };
@@ -99,6 +101,8 @@
 		3811CE9B26474CDF0087C353 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		3811CE9C26474CDF0087C353 /* TimeoutObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeoutObserver.swift; sourceTree = "<group>"; };
 		3811CEBE2647501B0087C353 /* WebServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceRequest.swift; sourceTree = "<group>"; };
+		3811CECC26479FA70087C353 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		3811CED12648996C0087C353 /* SymboldSearchOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymboldSearchOperation.swift; sourceTree = "<group>"; };
 		388E4DDB264730BC00C8D1E0 /* NasdaqIndex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NasdaqIndex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		388E4DDE264730BC00C8D1E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		388E4DE0264730BC00C8D1E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -205,12 +209,14 @@
 				388E4DDE264730BC00C8D1E0 /* AppDelegate.swift */,
 				388E4DE0264730BC00C8D1E0 /* SceneDelegate.swift */,
 				388E4DE2264730BC00C8D1E0 /* ViewController.swift */,
+				3811CED12648996C0087C353 /* SymboldSearchOperation.swift */,
 				388E4DE4264730BC00C8D1E0 /* Main.storyboard */,
 				388E4DE7264730BF00C8D1E0 /* Assets.xcassets */,
 				388E4DE9264730BF00C8D1E0 /* LaunchScreen.storyboard */,
 				388E4DEC264730BF00C8D1E0 /* Info.plist */,
 				3811CE782647393C0087C353 /* WebServiceManager.swift */,
 				3811CEBE2647501B0087C353 /* WebServiceRequest.swift */,
+				3811CECC26479FA70087C353 /* Company.swift */,
 			);
 			path = NasdaqIndex;
 			sourceTree = "<group>";
@@ -381,7 +387,9 @@
 				3811CEA226474CDF0087C353 /* DispatchQoS.QoSClass+.swift in Sources */,
 				3811CEA826474CDF0087C353 /* SilentCondition.swift in Sources */,
 				3811CEA626474CDF0087C353 /* State.swift in Sources */,
+				3811CECD26479FA70087C353 /* Company.swift in Sources */,
 				388E4DDF264730BC00C8D1E0 /* AppDelegate.swift in Sources */,
+				3811CED22648996C0087C353 /* SymboldSearchOperation.swift in Sources */,
 				3811CEB026474CDF0087C353 /* UIUserNotificationSettings+.swift in Sources */,
 				3811CEAA26474CDF0087C353 /* BlockOperation.swift in Sources */,
 				3811CEA026474CDF0087C353 /* Dictionary+Operations.swift in Sources */,
